@@ -10,6 +10,7 @@ collections:
     folder: "_posts"
     create: true # Allow creation
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template
+    fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
