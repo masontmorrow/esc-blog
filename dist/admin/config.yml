@@ -9,7 +9,7 @@ logo_url: "/assets/aglogo.svg"
 collections:
   - name: "posts"
     label: "Post"
-    folder: "_posts"
+    folder: "/posts"
     create: true # Allow creation
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template
     fields:
