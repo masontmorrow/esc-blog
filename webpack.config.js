@@ -11,5 +11,6 @@ module.exports = {
 		extensions: [".imba",".js", ".json"]
 	},
 	entry: "./src/client.imba",
-	output: {  path: __dirname + '/dist', filename: "client.js" }
+	output: {  path: __dirname + '/dist', filename: "client.js" },
+	mode: 'development'
 }
