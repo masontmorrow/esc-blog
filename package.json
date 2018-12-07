@@ -27,8 +27,14 @@
   "dependencies": {
     "express": "^4.16.2",
     "imba": "^1.4.0",
+    "marked": "0.5.2",
     "netlify-cms": "^2.3.0",
-    "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.11.1"
+    "redux": "3.7.2",
+    "slate": "0.44.8",
+    "webpack-dev-server": "3.1.10"
+  },
+  "devDependencies": {
+    "webpack": "4.27.1",
+    "webpack-cli": "3.1.2"
   }
 }
