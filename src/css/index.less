@@ -1,5 +1,11 @@
 @import './navbar.less';
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 .app {
     width: 100%;
     max-width: 1280px;
@@ -10,14 +16,39 @@
 }
 
 .logo {
+    position: relative;
     width: 100px;
     height: 50px;
     border: 4.3px solid black;
     border-radius: 10px;
     box-shadow: 3.33px 3.33px black;
-
+    font-display: swap;
+    font-family: 'Nunito', Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 3em;
+    line-height: 0;
+    padding: 0;
+    padding-bottom: 5px;
+    &:hover {
+        background: black;
+        color: white;
+        border: 3px solid white;
+        &::after {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            width: 98px;
+            height: 48px;
+            border-radius: 10px;
+            border: 1px solid black;
+        }
+    }
 }
 
 button:hover {
     cursor: pointer;
+}
+
+.whitespace {
+    flex-grow: 1;
 }
