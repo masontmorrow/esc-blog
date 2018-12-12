@@ -7,13 +7,19 @@ export default class IndexPage extends React.Component {
   render() {
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
+    const headline = 'Le Ultime Notizie'.split("");
 
     return (
       <Layout>
-        <section className="section">
-          <div className="container">
-            <div className="content">
-              <h1 className="has-text-weight-bold is-size-2">Le Ultime Notizie</h1>
+        <section className="home">
+            <div className="headline">
+              <h1 alt="Le Ultime Notizie">
+                {headline.map((letter, i) => {
+                  return (
+                    <span key={i} className="letter">{letter}</span>
+                  )
+                })}
+              </h1>
             </div>
             {posts
               .map(({ node: post }) => (
@@ -39,7 +45,6 @@ export default class IndexPage extends React.Component {
                   </p>
                 </div>
               ))}
-          </div>
         </section>
       </Layout>
     )
