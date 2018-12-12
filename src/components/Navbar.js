@@ -40,11 +40,15 @@ const Navbar = class extends React.Component {
           <span></span>
         </div> */}
         <div className="whitespace"></div>
-        <img src={follow} alt="Social follow menu icon"/>
+        <button>
+           <img src={follow} alt="Social follow menu icon"/>
+        </button>
         <Link className="navbar-item" to="/products">
           Archivio
         </Link>
-        <img src={search} alt="Search input trigger icon"/>
+        <button>
+          <img src={search} alt="Search input trigger icon"/>
+        </button>
   </nav>
   )}
 }
