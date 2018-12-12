@@ -8,7 +8,7 @@ export default class IndexPage extends React.Component {
   render() {
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
-    // console.log(data, posts);
+    console.log(data, posts);
     const headline = 'Le Ultime Notizie'.split("");
 
     return (
@@ -60,6 +60,10 @@ export const pageQuery = graphql`
             title
             templateKey
             date(formatString: "MMMM DD, YYYY")
+            featured_image {
+              publicURL
+            }
+            featured_image_alt
           }
         }
       }
