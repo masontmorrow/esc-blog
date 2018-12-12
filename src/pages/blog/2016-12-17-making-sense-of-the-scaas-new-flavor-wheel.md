@@ -6,6 +6,7 @@ description: >-
   The Coffee Taster’s Flavor Wheel, the official resource used by coffee
   tasters, has been revised for the first time this year.
 featured_image: /img/chemex.jpg
+featured_image_alt: Chemex coffee pot sitting on a table with a window on the left
 tags:
   - flavor
   - tasting
