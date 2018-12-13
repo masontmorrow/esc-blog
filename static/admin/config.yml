@@ -3,6 +3,7 @@ backend:
 
 media_folder: static/img
 public_folder: /img
+display_url: https://focused-tereshkova-b763bd.netlify.com
 
 collections:
   - name: "blog"
@@ -13,7 +14,7 @@ collections:
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "date"}
+      - {label: "Publish Date", name: "date", widget: "date", default: "", dateFormat: true}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Featured Image", name: "featured_image", widget: "image"}
       - {label: "Featured Image alt text", name: "featured_image_alt", widget: "text"}
