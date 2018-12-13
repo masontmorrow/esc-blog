@@ -25,9 +25,7 @@ export default class IndexPage extends React.Component {
             </div>
             {posts
               .map(({ node: post }) => (
-                <div key={post.id}>
-                  <ArticlePreview post={post} />
-                </div>
+                  <ArticlePreview key={post.id} post={post} />
               ))}
         </section>
       </Layout>
@@ -61,12 +59,16 @@ export const pageQuery = graphql`
             templateKey
             date(formatString: "MMMM DD, YYYY")
             featured_image {
-              publicURL
+              childImageSharp {
+              	fluid(maxWidth: 640) {
+              	  ...GatsbyImageSharpFluid
+              	}
+              }
             }
             featured_image_alt
           }
         }
       }
     }
-  }
+}
 `
