@@ -5,18 +5,20 @@ import Img from 'gatsby-image'
 
 const ArticlePreview = ({ post }) => {
     const { frontmatter } = post;
-    const featured_image = frontmatter.hasOwnProperty('featured_image');
+    const featured_image = frontmatter.featured_image !== null;
+    console.log(frontmatter);
+    console.log(featured_image);
     return (
         <div className="article-preview">
-            {/* <img 
-                src={featured_image ? `${post.frontmatter.featured_image.publicURL}` : ""} 
-                alt={featured_image ? `${post.frontmatter.featured_image_alt}` : ""}
-            /> */}
-            <Img 
-                className="article-preview-img"
-                fluid={featured_image ? frontmatter.featured_image.childImageSharp.fluid : ""} 
-                alt={featured_image ? frontmatter.featured_image_alt : ""}
-            />
+            {featured_image ? (
+                <Img 
+                    className="article-preview-img"
+                    fluid={frontmatter.featured_image.childImageSharp.fluid} 
+                    alt={frontmatter.featured_image_alt}
+                />
+            ) : (
+                <div className="article-preview-text"></div>
+            )}
             <div className="article-preview-text">
                 <h1>{frontmatter.title}</h1>
                 <h6 className="anton">{frontmatter.date}</h6>
