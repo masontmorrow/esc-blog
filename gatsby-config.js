@@ -23,7 +23,13 @@ module.exports = {
     },
     // image plugins
     'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-plugin-sharp',
+      options: {
+        stripMetaData: true,
+        sizeByPixelDensity: true
+      }
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
