@@ -21,7 +21,7 @@ const ArticlePreview = ({ post }) => {
             )}
             <div className="article-preview-text">
                 <h1>{frontmatter.title}</h1>
-                <h6 className="anton">{frontmatter.date}</h6>
+                <h6 className="anton">{frontmatter.date.includes('nvalid') ? "---" : frontmatter.date}</h6>
                 <p>
                     {post.excerpt}
                 </p>
