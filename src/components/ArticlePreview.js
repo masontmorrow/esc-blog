@@ -3,10 +3,9 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 
-const ArticlePreview = ({post}) => {
-    console.log(post.frontmatter.featured_image.childImageSharp.fluid);
-    const featured_image = post.frontmatter.hasOwnProperty('featured_image');
+const ArticlePreview = ({ post }) => {
     const { frontmatter } = post;
+    const featured_image = frontmatter.hasOwnProperty('featured_image');
     return (
         <div className="article-preview">
             {/* <img 
@@ -15,8 +14,8 @@ const ArticlePreview = ({post}) => {
             /> */}
             <Img 
                 className="article-preview-img"
-                fluid={frontmatter.featured_image.childImageSharp.fluid} 
-                alt={frontmatter.featured_image_alt}
+                fluid={featured_image ? frontmatter.featured_image.childImageSharp.fluid : ""} 
+                alt={featured_image ? frontmatter.featured_image_alt : ""}
             />
             <div className="article-preview-text">
                 <h1>{frontmatter.title}</h1>
