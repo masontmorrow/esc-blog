@@ -15,6 +15,7 @@ h4,
 h5,
 h6 {
     font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 0.8px;
 }
 
 h1 {
@@ -38,6 +39,13 @@ h6 {
 
 a, p, textarea, input, button {
     font-size: 1.6rem;
+}
+
+// fonts
+
+.anton {
+    font-family: 'Anton';
+    letter-spacing: 1.5px;
 }
 
 img {
@@ -124,12 +132,7 @@ a {
     flex-grow: 1;
 }
 
-.article-preview {
-    display: flex;
-    flex-flow: row wrap;
-    height: 400px;
-}
-
 // imports
 
 @import './navbar.less';
+@import './articlePreview.less';
