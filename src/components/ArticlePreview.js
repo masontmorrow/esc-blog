@@ -20,13 +20,20 @@ const ArticlePreview = ({ post }) => {
                 <div className="article-preview-text"></div>
             )}
             <div className="article-preview-text">
-                <h1>{frontmatter.title}</h1>
-                <h6 className="anton">{frontmatter.date.includes('nvalid') ? "---" : frontmatter.date}</h6>
-                <p>
-                    {post.excerpt}
-                </p>
+                <div>
+                    <Link to={post.fields.slug}>
+                        <h2>{frontmatter.title}</h2>
+                    </Link>
+                    <h6 className="anton">{frontmatter.date.includes('nvalid') ? "---" : frontmatter.date}</h6>
+                    <p>
+                        {post.excerpt}
+                    </p>
+                </div>
                 <Link to={post.fields.slug}>
-                    Keep Reading →
+                    Leggi 
+                    <svg width="20" height="36" viewBox="0 0 20 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L18 18L1 35" stroke="black" stroke-width="2"/>
+                    </svg>
                 </Link>
             </div>
         </div>
