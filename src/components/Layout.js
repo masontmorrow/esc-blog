@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from "gatsby"
-
+import SignUp from '../components/SignUp'
 import Navbar from '../components/Navbar'
 import '../css/index.less'
 
@@ -38,6 +38,8 @@ const TemplateWrapper = ({ children }) => (
         </Helmet>
         <Navbar />
         <div>{children}</div>
+        <SignUp />
+        {/* <Footer /> */}
       </div>
     )}
   />
