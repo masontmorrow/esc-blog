@@ -13,7 +13,7 @@ export default class IndexPage extends React.Component {
 
     return (
       <Layout>
-        <section className="article-list">
+        <main className="article-list">
             <div className="headline">
               <h1 alt="Le Ultime Notizie">
                 {headline.map((letter, i) => {
@@ -33,7 +33,7 @@ export default class IndexPage extends React.Component {
                   <p className="anton">di più</p>
                 </button>
             </div>
-        </section>
+        </main>
       </Layout>
     )
   }
