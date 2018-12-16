@@ -37,18 +37,37 @@ h5 {
 h6 {
     font-size: 1.8rem;
 }
-
 a, p, textarea, input, button {
     font-size: 1.6rem;
     line-height: 100%;
 }
+fieldset {
+    border: none;
+}
+label {
+    margin-bottom: 5px;
+}
 
-// fonts
+
+// start fonts
 
 .anton {
-    font-family: 'Anton';
+    font-family: 'Anton', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     letter-spacing: 1.5px;
+    font-display: swap;
+
 }
+.nunito {
+    font-family: 'Nunito', Verdana, Geneva, Tahoma, sans-serif;
+    font-display: swap;
+}
+.montserrat {
+    font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-display: swap;
+
+}
+
+// end fonts
 
 img {
     max-width: 100%;
@@ -68,7 +87,7 @@ img {
     }
 }
 
-.home {
+.article-list {
     display: flex;
     flex-flow: column wrap;
     .headline {
@@ -85,33 +104,16 @@ img {
     }
 }
 
-.logo {
-    position: relative;
-    width: 100px;
-    height: 50px;
-    border: 4.3px solid black;
-    border-radius: 10px;
-    box-shadow: 3.33px 3.33px black;
-    font-display: swap;
-    font-family: 'Nunito', Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 4.6em;
-    line-height: 0;
-    padding: 0;
-    padding-bottom: 5px;
-    &:hover {
-        background: black;
-        color: white;
-        border: 3px solid white;
-        &::after {
-            content: '';
-            position: absolute;
-            top: -3px;
-            left: -3px;
-            width: 98px;
-            height: 48px;
-            border-radius: 10px;
-            border: 1px solid black;
-        }
+.article-loader {
+    height: 225px;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    button {
+        margin: 45px 0 5px;
+    }
+    img {
+        transform: rotateZ(90deg);
     }
 }
 
@@ -124,6 +126,39 @@ button:hover {
     cursor: pointer;
 }
 
+.button {
+    border: 4.3px solid black;
+    border-radius: 10px;
+    box-shadow: 3.33px 3.33px black;
+    background: white;
+    line-height: 0;
+    .nunito();
+    padding: 10px;
+    padding-bottom: 8px;
+        &:hover {
+        background: black;
+        color: white;
+        border: 3px solid white;
+    }    
+}
+
+.checked {
+    background: black;
+    color: white;
+    padding-right: 28px;
+    &::after {
+        content: '';
+        position: absolute;
+        height: 12px;
+        width: 5px;
+        margin-left: 10px;
+        margin: -9px 0 0px 8px;
+        border-bottom: 4px solid white;
+        border-right: 4px solid white;
+        transform: rotateZ(32deg);
+    }
+}
+
 a {
     color: black;
     text-decoration: none;
@@ -134,7 +169,27 @@ a {
     flex-grow: 1;
 }
 
+.logo {
+    position: relative;
+    width: 100px;
+    height: 50px;
+    font-size: 4.6em;
+    .button();
+    padding: 0 0 5px;
+        &::after {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            width: 98px;
+            height: 48px;
+            border-radius: 10px;
+            border: 1px solid black;
+        }
+}
+
 // imports
 
 @import './navbar.less';
 @import './articlePreview.less';
+@import './signUp.less';
