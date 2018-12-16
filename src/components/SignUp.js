@@ -3,7 +3,9 @@ import PropTypes from 'prop-types'
 
 class SignUp extends React.Component {
     state = {
-
+        email: "",
+        gdpr_8849: false,
+        gdpr_8857: false
     }
 
     onChange = e => {
@@ -40,9 +42,9 @@ class SignUp extends React.Component {
                             <p>Please select all the ways you would like to hear from ESC Rivista:</p>
                             <fieldset name="interestgroup_field">
                                 <button className={gdpr_8849 ? "button checked" : "button"} type="button" name="gdpr_8849" onClick={this.toggle}>Email</button>
-                                <input type="checkbox" id="gdpr_8849" name="gdpr_8849" value={gdpr_8849} onChange={this.onChange} ariaHidden={true} hidden/>
+                                <input type="checkbox" id="gdpr_8849" name="gdpr_8849" value={gdpr_8849} onChange={this.onChange} aria-hidden={true} hidden/>
                                 <button className={gdpr_8857 ? "button checked" : "button"} type="button" name="gdpr_8857" onClick={this.toggle}>Customized Online Advertising</button>
-                                <input type="checkbox" id="gdpr_8857" name="gdpr_8857" value={gdpr_8857} onChange={this.onChange}ariaHidden={true} hidden/>
+                                <input type="checkbox" id="gdpr_8857" name="gdpr_8857" value={gdpr_8857} onChange={this.onChange}aria-hidden={true} hidden/>
                             </fieldset>
                             <p>You can unsubscribe at any time by clicking the link in the footer of our emails. For information about our privacy practices, please visit our website.</p>
                             <p>We use Mailchimp as our marketing platform. By clicking below to subscribe, you acknowledge that your information will be transferred to Mailchimp for processing. 
