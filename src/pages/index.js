@@ -3,17 +3,17 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import ArticlePreview from '../components/ArticlePreview'
+import arrow from '../img/arrow.svg'
 
 export default class IndexPage extends React.Component {
   render() {
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
-    console.log(data, posts);
     const headline = 'Le Ultime Notizie'.split("");
 
     return (
       <Layout>
-        <section className="home">
+        <section className="article-list">
             <div className="headline">
               <h1 alt="Le Ultime Notizie">
                 {headline.map((letter, i) => {
@@ -27,6 +27,12 @@ export default class IndexPage extends React.Component {
               .map(({ node: post }) => (
                   <ArticlePreview key={post.id} post={post} />
               ))}
+            <div className="article-loader">
+                <button type="button">
+                  <img src={arrow} alt="Arrow icon to load more articles"/>
+                  <p className="anton">di più</p>
+                </button>
+            </div>
         </section>
       </Layout>
     )
