@@ -1,6 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from "gatsby"
+import Footer from '../components/Footer'
 import SignUp from '../components/SignUp'
 import Navbar from '../components/Navbar'
 import '../css/index.less'
@@ -18,7 +19,7 @@ const TemplateWrapper = ({ children }) => (
         }
     `}
     render={data => (
-      <div className="app">
+      <div>
         <Helmet>
           <html lang="en" />
           <title>{data.site.siteMetadata.title}</title>
@@ -36,10 +37,12 @@ const TemplateWrapper = ({ children }) => (
           <meta property="og:url" content="/" />
           <meta property="og:image" content="/img/og-image.jpg" />
         </Helmet>
-        <Navbar />
-        <div>{children}</div>
+        <div className="app">
+          <Navbar />
+          <div>{children}</div>
+        </div>
         <SignUp />
-        {/* <Footer /> */}
+        <Footer />
       </div>
     )}
   />
