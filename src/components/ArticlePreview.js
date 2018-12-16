@@ -2,14 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
+import arrow from '../img/arrow.svg'
 
 const ArticlePreview = ({ post }) => {
     const { frontmatter } = post;
     const featured_image = frontmatter.featured_image !== null;
-    console.log(frontmatter);
-    console.log(featured_image);
     return (
-        <div className="article-preview">
+        <article className="article-preview">
             {featured_image ? (
                 <Img 
                     className="article-preview-img"
@@ -31,12 +30,10 @@ const ArticlePreview = ({ post }) => {
                 </div>
                 <Link to={post.fields.slug}>
                     Leggi 
-                    <svg width="20" height="36" viewBox="0 0 20 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 1L18 18L1 35" stroke="black" stroke-width="2"/>
-                    </svg>
+                    <img src={arrow} alt="Arrow icon"/>
                 </Link>
             </div>
-        </div>
+        </article>
     )
 }
 
