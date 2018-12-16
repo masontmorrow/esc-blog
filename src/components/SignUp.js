@@ -47,9 +47,8 @@ class SignUp extends React.Component {
                                 <input type="checkbox" id="gdpr_8857" name="gdpr_8857" value={gdpr_8857} onChange={this.onChange}aria-hidden={true} hidden/>
                             </fieldset>
                             <p>You can unsubscribe at any time by clicking the link in the footer of our emails. For information about our privacy practices, please visit our website.</p>
-                            <p>We use Mailchimp as our marketing platform. By clicking below to subscribe, you acknowledge that your information will be transferred to Mailchimp for processing. 
-                                <a href="https://mailchimp.com/legal/" target="_blank" rel="noopener noreferrer">Learn more about Mailchimp's privacy practices here.</a>
-                            </p>
+                            <p>We use Mailchimp as our marketing platform. By clicking below to subscribe, you acknowledge that your information will be transferred to Mailchimp for processing.</p>
+                            <a href="https://mailchimp.com/legal/" target="_blank" rel="noopener noreferrer">Learn more about Mailchimp's privacy practices here.</a>
                             <div style={{ position: "absolute", left: "-5000px", ariaHidden: "true"}}>
                                 <input type="text" name="b_b6d912c6cb50482e3f936b7d6_ae758c88fd" tabIndex="-1" value="" onChange={this.onChange}/>
                             </div>
