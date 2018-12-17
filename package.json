@@ -24,6 +24,7 @@
     "lodash": "^4.17.5",
     "lodash-webpack-plugin": "^0.11.4",
     "netlify-cms": "^2.3.0",
+    "netlify-lambda": "1.1.1",
     "parcel-bundler": "^1.9.4",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
@@ -41,9 +42,10 @@
   "scripts": {
     "start": "npm run develop",
     "clean": "rimraf .cache public",
-    "build": "npm run clean && gatsby build",
+    "build": "npm run clean && gatsby build && netlify-lambda build src/lambda",
     "develop": "npm run clean && gatsby develop",
     "serve": "gatsby serve",
+    "lambda": "netlify-lambda serve src/lambda",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
