@@ -31,17 +31,16 @@ class SignUp extends React.Component {
                 enabled: true
             }
         ) : data.marketing_permissions = data.marketing_permissions;
-        console.log(e, data);
-        fetch(`${process.env.REACT_APP_MAILCHIMP_API}/lists/${process.env.REACT_APP_MAILCHIMP_LIST_ID}/members`, {
+        fetch(`${process.env.REACT_APP_LAMBDA_MAILCHIMP_SIGNUP}`, {
             method: 'POST',
-            headers: {
-                'Authorization': `apikey ${process.env.REACT_APP_MAILCHIMP_KEY}`,
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data)
+            // headers: {
+            //     'Content-Type': 'application/json',
+            // },
+            body: JSON.stringify(data),
+            mode: 'no-cors'
         })
         .then(response => response.json())
-        .then(json => console.log(json))
+        .then(response => console.log(response))
         .catch(error => console.error('Error:', error));
     }
 
