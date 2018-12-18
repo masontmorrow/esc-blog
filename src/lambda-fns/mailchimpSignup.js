@@ -1,44 +1,57 @@
 const https = require('https');
+// const request = require('request');
+const querystring = require('querystring');
 require("dotenv").config({
     path: `.env.${process.env.NODE_ENV}`,
 })
 
 exports.handler = function (event, context, callback) {
-    console.log('EVENT>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>',event);
+    // console.log('EVENT>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n',event);
     // console.log('CONTEXT>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>', context);1\
 
     // reject GET / Preflight requests
-    if(event.httpMethod !== 'POST' || !event.body) {
-        callback(null, {
-            statusCode: 401,
-            body: "No access"
-        });
-    }
+    // if(event.httpMethod !== 'POST' || !event.body) {
+    //     callback(null, {
+    //         statusCode: 401,
+    //         body: "No access"
+    //     });
+    // }
+
+    const postData = event.body
 
     const options = {
         hostname: `${process.env.LAMBDA_MAILCHIMP_API}`,
-        path: `/lists/${process.env.LAMBDA_MAILCHIMP_LIST_ID}/members`,
+        port: 443,
+        path: `${process.env.LAMBDA_MAILCHIMP_LIST_MEMBER_URL}`,
         method: event.httpMethod,
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `${process.env.LAMBDA_MAILCHIMP_KEY}`
-        },
-        body: event.body
+            'Content-Length': postData.length,
+            'Authorization': `apikey ${process.env.LAMBDA_MAILCHIMP_KEY}`
+        }
+       
     }
-    console.log('OPTIONS>>>>>>>>>>>>>>>>>>>>>>>>>>>>>', options);
+    // const req = {...options, ...event.body};
+    console.log('OPTIONS>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n', options);
+    console.log('POST DATA>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n', postData);
 
     const req = https.request(options, (res) => {
+        console.log('statusCode>>>>>>>>>>:\n', res.statusCode);
+        console.log('statusMessage>>>>>>>>>>>>>:\n', res.statusMessage);
         res.on('data', (d) => {
-            console.log(d);
+            process.stdout.write(d);
             callback(null, {
-                statusCode: 200,
-                body: "Success"
+                statusCode: res.statusCode,
+                body: res.statusMessage
             });
         });
     });
+
     req.on('error', (e) => {
         console.error(e);
         callback(e);
     });
+
+    req.write(postData);
     req.end();
 }
