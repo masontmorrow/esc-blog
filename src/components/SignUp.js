@@ -16,7 +16,7 @@ class SignUp extends React.Component {
 
     submitEmail = (e, data) => {
         e.preventDefault();
-        data.status = 'subscribed'; // 'subscribed' - no confirm email, 'pending' - confirmation email sent 
+        data.status = 'pending'; // 'subscribed' - no confirm email, 'pending' - confirmation email sent 
         const email = data.gdpr_8849;
         const marketing = data.gdpr_8857;
         email ? data.marketing_permissions = [ 
