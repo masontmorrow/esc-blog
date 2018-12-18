@@ -45,7 +45,7 @@
     "build": "npm run clean && gatsby build && netlify-lambda build src/lambda-fns",
     "develop": "npm run clean && gatsby develop",
     "serve": "gatsby serve",
-    "lambda": "netlify-lambda serve src/lambda",
+    "lambda": "netlify-lambda serve src/lambda-fns",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
