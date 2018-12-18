@@ -1,6 +1,4 @@
 const https = require('https');
-// const request = require('request');
-const querystring = require('querystring');
 require("dotenv").config({
     path: `.env.${process.env.NODE_ENV}`,
 })
@@ -31,7 +29,7 @@ exports.handler = function (event, context, callback) {
         }
        
     }
-    // const req = {...options, ...event.body};
+
     console.log('OPTIONS>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n', options);
     console.log('POST DATA>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n', postData);
 
