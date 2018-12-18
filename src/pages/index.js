@@ -63,7 +63,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             templateKey
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "DD MMM YYYY")
             featured_image {
               childImageSharp {
               	fluid(maxWidth: 640) {
